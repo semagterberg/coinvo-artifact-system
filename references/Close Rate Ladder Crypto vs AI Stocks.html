@@ -1,0 +1,56 @@
+<div style="padding:1rem 0;font-family:var(--font-sans);">
+<h2 class="sr-only">Two ranked ladders of sales channels by close strength. Generic version runs from warm intro at the top to paid social at the bottom. Coinvo version runs from inbound off distribution at the top to cold mass pitch at the bottom. Color grades teal for high-trust down to red for cold.</h2>
+
+<div style="font-size:12px;letter-spacing:.06em;color:var(--color-text-secondary);text-transform:uppercase;margin-bottom:14px;font-weight:500;">Generic channels · ranked by close strength</div>
+
+<div id="lad1"></div>
+
+<div style="height:1px;background:var(--color-border-tertiary);margin:26px 0 18px;"></div>
+<div style="font-size:12px;letter-spacing:.06em;color:var(--color-text-secondary);text-transform:uppercase;margin-bottom:14px;font-weight:500;">Coinvo BD reality · the relationship graph, not the platform</div>
+
+<div id="lad2"></div>
+
+<div style="font-size:12px;color:var(--color-text-tertiary);margin-top:18px;line-height:1.6;">Bar length is a relative close-strength rank, not a single shared percentage. The figures on the right are each channel's own native metric (win rate, conversion, or reply) and are not directly comparable as one number, which is exactly the doc's "segment, never blend" point.</div>
+</div>
+<script>
+setTimeout(function(){
+function rows(host,data){
+  var el=document.getElementById(host);
+  var html='';
+  for(var i=0;i<data.length;i++){
+    var d=data[i];
+    html+='<div style="display:flex;align-items:center;gap:14px;margin-bottom:9px;">'
+      +'<div style="width:38%;min-width:0;">'
+        +'<div style="font-size:15px;font-weight:500;color:var(--color-text-primary);">'+d.n+'</div>'
+        +'<div style="font-size:12px;color:var(--color-text-secondary);margin-top:1px;">'+d.d+'</div>'
+      +'</div>'
+      +'<div style="flex:1;min-width:0;height:30px;background:var(--color-background-secondary);border-radius:4px;position:relative;overflow:hidden;">'
+        +'<div style="position:absolute;left:0;top:0;bottom:0;width:'+d.v+'%;background:'+d.c+';border-radius:4px;"></div>'
+      +'</div>'
+      +'<div style="width:140px;text-align:right;font-size:12px;color:var(--color-text-secondary);font-variant-numeric:tabular-nums;">'+d.m+'</div>'
+    +'</div>';
+  }
+  el.innerHTML=html;
+}
+var T='#1D9E75',G='#5DCAA5',A='#BA7517',O='#D85A30',R='#E24B4A';
+rows('lad1',[
+ {n:'Warm intro / known contact',d:'Highest-closing channel that exists',v:100,c:T,m:'37% win vs 19% cold'},
+ {n:'Referral',d:'Trust transfers, shortest cycle',v:88,c:T,m:'5.4% ecom · 2.9% B2B'},
+ {n:'Email, opted-in / nurtured',d:'Warm list only',v:74,c:G,m:'4-5.3% ecom · 2.4% B2B'},
+ {n:'Organic search',d:'Person is already looking',v:58,c:A,m:'2.7-3% ecom · 2.6% B2B'},
+ {n:'Direct',d:'Brand-aware, mid-pack',v:46,c:A,m:'2.2% ecom'},
+ {n:'Paid search',d:'Intent-driven but noisier',v:36,c:O,m:'1.4% ecom · 1.5-3.2% B2B'},
+ {n:'Cold email',d:'Volume game, not a close channel',v:24,c:O,m:'reply 3-8% · meeting 0.2-2%'},
+ {n:'Cold call',d:'High signal, low yield',v:18,c:R,m:'~2.3% · was 4.82% (2024)'},
+ {n:'Paid social / Facebook',d:'Top-of-funnel only',v:8,c:R,m:'~0.9%'}
+]);
+rows('lad2',[
+ {n:'Inbound off distribution',d:'270M+ views = permanent warm-intro engine',v:100,c:T,m:'~37% tier'},
+ {n:'Mutual-intro DM',d:'Intro from a shared contact',v:82,c:T,m:'trust transfers'},
+ {n:'Repeat / re-up partner',d:'Prior deal, existing relationship',v:70,c:G,m:'shortest cycle'},
+ {n:'Warm reply',d:'They engaged your content first',v:52,c:A,m:'mid tier'},
+ {n:'Cold partner DM',d:'Cold X / Telegram outreach',v:26,c:O,m:'low yield'},
+ {n:'Cold pitch / mass blast',d:'Templated sponsorship blast',v:10,c:R,m:'~19% tier, lowest'}
+]);
+},80);
+</script>

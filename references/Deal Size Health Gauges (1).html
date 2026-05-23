@@ -1,0 +1,34 @@
+<div style="padding:1rem 0;font-family:var(--font-sans);">
+<h2 class="sr-only">Four deal-size bands, each on its own ruler with its own healthy zone. The typical close rate sits mid-healthy in every band, so 2 percent on a $250K deal is exactly as healthy as 40 percent on a small one.</h2>
+<div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:18px;">Each band on its own ruler. The number changes, the health does not.</div>
+<div id="gauges"></div>
+<div style="font-size:12px;color:var(--color-text-tertiary);margin-top:16px;line-height:1.6;">Healthy ranges from the dataset. Read each band against its own ruler, never one shared scale.</div>
+</div>
+<script>
+setTimeout(function(){
+var rows=[
+ {n:'Under $50K',hz:'healthy 35-45%',v:'40%',pos:50},
+ {n:'$50-100K',hz:'healthy 25-35%',v:'30%',pos:50},
+ {n:'Over $100K',hz:'healthy 15-25%',v:'20%',pos:50},
+ {n:'Enterprise $250K+',hz:'healthy 1-3%',v:'2%',pos:50}
+];
+var h='';
+for(var i=0;i<rows.length;i++){var r=rows[i];
+h+='<div style="margin-bottom:18px;">'
++'<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px;">'
++'<span style="font-size:15px;font-weight:500;color:var(--color-text-primary);">'+r.n+'</span>'
++'<span style="font-size:12px;color:var(--color-text-secondary);">'+r.hz+'</span>'
++'</div>'
++'<div style="position:relative;height:14px;background:var(--color-background-secondary);border-radius:7px;">'
++'<div style="position:absolute;left:32%;width:36%;top:0;bottom:0;background:rgba(29,158,117,0.30);border-radius:0;"></div>'
++'<div style="position:absolute;left:calc('+r.pos+'% - 7px);top:-3px;width:14px;height:20px;background:#1D9E75;border-radius:4px;"></div>'
++'</div>'
++'<div style="display:flex;justify-content:space-between;margin-top:6px;font-size:11px;color:var(--color-text-tertiary);">'
++'<span>low</span>'
++'<span style="font-size:13px;font-weight:500;color:#1D9E75;">'+r.v+' \u00b7 healthy</span>'
++'<span>high</span>'
++'</div>'
++'</div>';}
+document.getElementById('gauges').innerHTML=h;
+},80);
+</script>

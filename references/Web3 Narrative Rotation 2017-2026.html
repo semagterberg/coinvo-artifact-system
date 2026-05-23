@@ -1,0 +1,39 @@
+<div style="padding: 1rem 0;">
+<h2 class="sr-only">Line chart of attention share across five Web3 sub-narratives from 2017 to 2026. DeFi breaks out 2020 and peaks 2021. NFT spikes 2021 then collapses to near zero. Memecoins peak 2024 then cool. RWA and prediction markets climb steadily and dominate by 2026.</h2>
+<div style="display:flex;flex-wrap:wrap;gap:16px;margin-bottom:14px;font-size:13px;color:var(--color-text-secondary);">
+  <span style="display:flex;align-items:center;gap:6px;"><span style="width:18px;height:0;border-top:3px solid #378ADD;"></span>DeFi</span>
+  <span style="display:flex;align-items:center;gap:6px;"><span style="width:18px;height:0;border-top:3px dashed #D4537E;"></span>NFT</span>
+  <span style="display:flex;align-items:center;gap:6px;"><span style="width:18px;height:0;border-top:3px dotted #EF9F27;"></span>Memecoins</span>
+  <span style="display:flex;align-items:center;gap:6px;"><span style="width:18px;height:0;border-top:3px solid #1D9E75;"></span>RWA</span>
+  <span style="display:flex;align-items:center;gap:6px;"><span style="width:18px;height:0;border-top:3px dashed #7F77DD;"></span>Prediction markets</span>
+</div>
+<div style="position:relative;width:100%;height:380px;">
+  <canvas id="rotChart2" role="img" aria-label="From 2017 to 2026. DeFi near 1 in 2017, breaking out to 35 in 2020 and 70 in 2021, falling to 22 by 2023, recovering to 33 by 2026. NFT a small bump at 5 in 2017 from CryptoKitties, near 3 in 2020, spiking to 85 in 2021, collapsing to 5 by 2026. Memecoins low until a 40 bump in 2021, peaking 75 in 2024, cooling to 30 by 2026. RWA flat near 1 until 2022 then climbing to 90 by 2026. Prediction markets flat until a 55 breakout in 2024 rising to 88 by 2026.">Web3 sub-narrative attention rotation 2017 to 2026.</canvas>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+(function(){
+  var dark=matchMedia('(prefers-color-scheme: dark)').matches;
+  var grid=dark?'rgba(255,255,255,0.08)':'rgba(0,0,0,0.07)';
+  var tick=dark?'rgba(255,255,255,0.55)':'rgba(0,0,0,0.55)';
+  var yrs=[2017,2018,2019,2020,2021,2022,2023,2024,2025,2026];
+  new Chart(document.getElementById('rotChart2'),{
+    type:'line',
+    data:{labels:yrs,datasets:[
+      {label:'DeFi',data:[1,3,8,35,70,30,22,25,30,33],borderColor:'#378ADD',borderWidth:2.5,tension:0.35,pointRadius:0,pointHoverRadius:4,fill:false},
+      {label:'NFT',data:[5,4,3,3,85,55,20,10,6,5],borderColor:'#D4537E',borderWidth:2.5,borderDash:[7,4],tension:0.35,pointRadius:0,pointHoverRadius:4,fill:false},
+      {label:'Memecoins',data:[3,2,2,2,40,12,18,75,55,30],borderColor:'#EF9F27',borderWidth:2.5,borderDash:[2,3],tension:0.35,pointRadius:0,pointHoverRadius:4,fill:false},
+      {label:'RWA',data:[1,1,1,1,2,5,12,35,65,90],borderColor:'#1D9E75',borderWidth:3,tension:0.35,pointRadius:0,pointHoverRadius:4,fill:false},
+      {label:'Prediction markets',data:[1,2,2,3,3,6,10,55,80,88],borderColor:'#7F77DD',borderWidth:3,borderDash:[7,4],tension:0.35,pointRadius:0,pointHoverRadius:4,fill:false}
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+      plugins:{legend:{display:false},
+        tooltip:{callbacks:{label:function(c){return c.dataset.label+': '+Math.round(c.parsed.y);}}}},
+      scales:{
+        x:{grid:{color:grid},ticks:{color:tick,font:{size:11}}},
+        y:{min:0,max:100,grid:{color:grid},ticks:{color:tick,stepSize:25,font:{size:11}},title:{display:true,text:'Share of Web3 retail attention (indexed)',color:tick,font:{size:11}}}
+      }}
+  });
+})();
+</script>
