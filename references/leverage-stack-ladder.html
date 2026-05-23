@@ -1,0 +1,30 @@
+<div style="padding:1rem 0;font-family:var(--font-sans);">
+<h2 class="sr-only">Ranked stack of four leverage forms: code and autonomous products at the apex, media and owned audience second, capital third, labor a distant fourth marked to starve.</h2>
+
+<div id="lvstack"></div>
+
+<div style="font-size:12px;color:var(--color-text-tertiary);margin-top:16px;line-height:1.6;">All three top rungs are a multiplier on judgment. Pointed at a bad decision they produce faster ruin, not more output. Bar length is rank, not a measured unit.</div>
+</div>
+<script>
+setTimeout(function(){
+var rows=[
+ {n:'Code & autonomous products',d:'Zero marginal cost · no permission · never quits · runs while you sleep',v:100,c:'#1D9E75',s:'Building it — Business OS, agents'},
+ {n:'Media & owned audience',d:'Same zero-cost copy · one rung down, attention decays and rails are rented',v:85,c:'#1D9E75',s:'You own it — 270M / mo'},
+ {n:'Capital',d:'Infinitely scalable · one decision moves millions · must be earned, has opp cost',v:60,c:'#BA7517',s:'Compounding — CCS'},
+ {n:'Labor / other people\u2019s time',d:'Does not scale · needs permission · can quit · raw material, not leverage',v:16,c:'#E24B4A',s:'Keep starving it'}
+];
+var h='';
+for(var i=0;i<rows.length;i++){var r=rows[i];
+h+='<div style="display:flex;align-items:center;gap:14px;margin-bottom:11px;">'
++'<div style="width:40%;min-width:0;">'
++'<div style="font-size:15px;font-weight:500;color:var(--color-text-primary);">'+(i+1)+'. '+r.n+'</div>'
++'<div style="font-size:12px;color:var(--color-text-secondary);margin-top:2px;line-height:1.45;">'+r.d+'</div>'
++'</div>'
++'<div style="flex:1;min-width:0;height:34px;background:var(--color-background-secondary);border-radius:4px;position:relative;overflow:hidden;">'
++'<div style="position:absolute;left:0;top:0;bottom:0;width:'+r.v+'%;background:'+r.c+';border-radius:4px;"></div>'
++'</div>'
++'<div style="width:150px;text-align:right;font-size:12px;color:var(--color-text-secondary);">'+r.s+'</div>'
++'</div>';}
+document.getElementById('lvstack').innerHTML=h;
+},80);
+</script>

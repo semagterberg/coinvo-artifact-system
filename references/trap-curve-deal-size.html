@@ -1,0 +1,38 @@
+<div style="padding:1rem 0;font-family:var(--font-sans);">
+<h2 class="sr-only">An annotated curve showing close rate falling as deal size rises, from 35 to 45 percent under $50K down to 1 to 3 percent at enterprise, while follow-ups needed rise in the opposite direction, the two lines crossing in the middle. Coinvo's $7-10K deals are pinned in the lower-close region as correct, not a leak.</h2>
+<div style="display:flex;flex-wrap:wrap;gap:18px;margin-bottom:6px;font-size:13px;color:var(--color-text-secondary);">
+<span style="display:flex;align-items:center;gap:6px;"><span style="width:18px;border-top:3px solid #1D9E75;"></span>Close rate (falls)</span>
+<span style="display:flex;align-items:center;gap:6px;"><span style="width:18px;border-top:3px dashed #7F77DD;"></span>Follow-ups needed (rises)</span>
+</div>
+<svg viewBox="0 0 680 400" width="100%" role="img" aria-label="Close rate descends from about 40 percent for sub-50K deals to about 2 percent for enterprise, while follow-ups needed rise from 3 to 12, the lines crossing in the middle.">
+<desc>Deal-size trap: close rate falls and effort rises as deal size grows.</desc>
+<line x1="70" y1="320" x2="615" y2="320" stroke="var(--color-border-tertiary)" stroke-width="1"/>
+<line x1="345" y1="58" x2="345" y2="320" stroke="var(--color-border-tertiary)" stroke-width="1" stroke-dasharray="4 4"/>
+<polygon points="90,104 260,158 430,212 590,309 590,320 90,320" fill="#1D9E75" opacity="0.07"/>
+<polyline points="90,104 260,158 430,212" fill="none" stroke="#1D9E75" stroke-width="2.5"/>
+<polyline points="430,212 590,309" fill="none" stroke="#E24B4A" stroke-width="2.5"/>
+<polyline points="90,262 260,204 430,146 590,89" fill="none" stroke="#7F77DD" stroke-width="2" stroke-dasharray="6 4"/>
+<circle cx="90" cy="104" r="3.5" fill="#1D9E75"/>
+<circle cx="260" cy="158" r="3.5" fill="#1D9E75"/>
+<circle cx="430" cy="212" r="3.5" fill="#1D9E75"/>
+<circle cx="590" cy="309" r="3.5" fill="#E24B4A"/>
+<text x="86" y="90" font-size="12.5" font-weight="500" fill="#1D9E75" font-family="var(--font-sans)">Under $50K · 35-45%</text>
+<text x="345" y="48" font-size="12" fill="var(--color-text-tertiary)" text-anchor="middle" font-family="var(--font-sans)">effort overtakes yield</text>
+<text x="605" y="268" font-size="12.5" font-weight="500" fill="#E24B4A" text-anchor="end" font-family="var(--font-sans)">Enterprise $250K+ · 1-3%</text>
+<text x="605" y="285" font-size="12" fill="var(--color-text-secondary)" text-anchor="end" font-family="var(--font-sans)">closes on relationship, not platform</text>
+<text x="600" y="74" font-size="12.5" font-weight="500" fill="#7F77DD" text-anchor="end" font-family="var(--font-sans)">5-12 follow-ups · 80% of deals</text>
+<g>
+<rect x="96" y="236" width="250" height="56" rx="6" fill="var(--color-background-secondary)" stroke="var(--color-border-tertiary)" stroke-width="1"/>
+<rect x="96" y="236" width="3" height="56" fill="#D85A30"/>
+<text x="112" y="258" font-size="13" font-weight="500" fill="var(--color-text-primary)" font-family="var(--font-sans)">Coinvo $7-10K dedicated deals</text>
+<text x="112" y="277" font-size="12" fill="var(--color-text-secondary)" font-family="var(--font-sans)">lower close here is correct, not a leak</text>
+</g>
+<text x="90" y="345" font-size="12" fill="var(--color-text-secondary)" text-anchor="middle" font-family="var(--font-sans)">Under $50K</text>
+<text x="260" y="345" font-size="12" fill="var(--color-text-secondary)" text-anchor="middle" font-family="var(--font-sans)">$50-100K</text>
+<text x="430" y="345" font-size="12" fill="var(--color-text-secondary)" text-anchor="middle" font-family="var(--font-sans)">Over $100K</text>
+<text x="590" y="345" font-size="12" fill="var(--color-text-secondary)" text-anchor="middle" font-family="var(--font-sans)">Enterprise $250K+</text>
+<text x="62" y="108" font-size="11" fill="var(--color-text-tertiary)" text-anchor="end" font-family="var(--font-sans)">high</text>
+<text x="62" y="312" font-size="11" fill="var(--color-text-tertiary)" text-anchor="end" font-family="var(--font-sans)">low</text>
+</svg>
+<div style="font-size:12px;color:var(--color-text-tertiary);margin-top:6px;line-height:1.6;">Close-rate band midpoints from the dataset: under $50K 35-45%, $50-100K 25-35%, over $100K 15-25%, a $250K enterprise platform 1-3% is healthy. The curves are directional, the point is the inverse relationship and the crossover.</div>
+</div>
