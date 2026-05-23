@@ -1,0 +1,118 @@
+<style>
+.b5-wrap { padding: 4px 0; }
+.b5-title { font-size: 28px; font-weight: 700; line-height: 1.1; letter-spacing: -0.015em; color: var(--color-text-primary); margin: 0; }
+.b5-sub { font-size: 15px; font-weight: 400; color: var(--color-text-secondary); margin: 8px 0 0; line-height: 1.45; }
+.b5-div { border: none; border-top: 1px solid var(--color-border-tertiary); margin: 18px 0 14px; }
+.b5-svg { width: 100%; height: auto; display: block; margin: 4px 0 18px; }
+.b5-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+.b5-stat { padding: 14px 16px; border-radius: 6px; border: 1px solid; }
+.b5-stat-lab { font-size: 10px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; margin-bottom: 6px; }
+.b5-stat-num { font-size: 24px; font-weight: 700; line-height: 1.1; letter-spacing: -0.015em; margin-bottom: 4px; }
+.b5-stat-cap { font-size: 11px; color: var(--color-text-secondary); line-height: 1.4; }
+.b5-foot { margin-top: 4px; font-size: 12px; color: var(--color-text-tertiary); line-height: 1.55; }
+</style>
+<div class="b5-wrap">
+<h2 class="sr-only">The 5 buckets: one engine where every bucket feeds the next. Fill levels are proportional to allocation: 40, 25, 20, 10, 5 percent.</h2>
+<h1 class="b5-title">The 5 buckets</h1>
+<p class="b5-sub">One engine. Every bucket feeds the next. Kill one, the engine sputters.</p>
+<hr class="b5-div" />
+
+<svg class="b5-svg" viewBox="0 0 680 430" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<clipPath id="bk1"><path d="M45 90 L115 90 L107 210 L53 210 Z"/></clipPath>
+<clipPath id="bk2"><path d="M165 90 L235 90 L227 210 L173 210 Z"/></clipPath>
+<clipPath id="bk3"><path d="M285 90 L355 90 L347 210 L293 210 Z"/></clipPath>
+<clipPath id="bk4"><path d="M405 90 L475 90 L467 210 L413 210 Z"/></clipPath>
+<clipPath id="bk5"><path d="M525 90 L595 90 L587 210 L533 210 Z"/></clipPath>
+<marker id="arr-feed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="rgba(255,255,255,0.35)"/></marker>
+<marker id="arr-loop" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#22D3EE"/></marker>
+</defs>
+
+<!-- Bucket 1 · 40% · Breaking News (green) -->
+<rect x="45" y="138" width="70" height="72" fill="rgba(52,211,153,0.30)" clip-path="url(#bk1)"/>
+<path d="M45 90 L115 90 L107 210 L53 210 Z" stroke="#34D399" stroke-width="2" fill="none"/>
+<line x1="48" y1="138" x2="112" y2="138" stroke="#34D399" stroke-width="0.8" stroke-dasharray="2,3" opacity="0.45"/>
+<text x="80" y="125" text-anchor="middle" fill="#34D399" font-size="22" font-weight="700" letter-spacing="-0.02em">40%</text>
+<text x="80" y="240" text-anchor="middle" fill="#34D399" font-size="9" font-weight="700" letter-spacing="0.10em">BUCKET 01</text>
+<text x="80" y="260" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700">Breaking News</text>
+<text x="80" y="282" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="11">Catch news in 5 min.</text>
+<text x="80" y="298" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="11">Feeds every bucket.</text>
+
+<!-- Bucket 2 · 25% · Stealing Winners (amber) -->
+<rect x="165" y="180" width="70" height="30" fill="rgba(245,197,24,0.30)" clip-path="url(#bk2)"/>
+<path d="M165 90 L235 90 L227 210 L173 210 Z" stroke="#F5C518" stroke-width="2" fill="none"/>
+<line x1="168" y1="180" x2="232" y2="180" stroke="#F5C518" stroke-width="0.8" stroke-dasharray="2,3" opacity="0.45"/>
+<text x="200" y="125" text-anchor="middle" fill="#F5C518" font-size="22" font-weight="700" letter-spacing="-0.02em">25%</text>
+<text x="200" y="240" text-anchor="middle" fill="#F5C518" font-size="9" font-weight="700" letter-spacing="0.10em">BUCKET 02</text>
+<text x="200" y="260" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700">Stealing Winners</text>
+<text x="200" y="282" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="11">Reverse-engineer outliers.</text>
+<text x="200" y="298" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="11">700K to 6.5M move.</text>
+
+<!-- Bucket 3 · 20% · Double Down (purple) -->
+<rect x="285" y="186" width="70" height="24" fill="rgba(168,85,247,0.30)" clip-path="url(#bk3)"/>
+<path d="M285 90 L355 90 L347 210 L293 210 Z" stroke="#A855F7" stroke-width="2" fill="none"/>
+<line x1="288" y1="186" x2="352" y2="186" stroke="#A855F7" stroke-width="0.8" stroke-dasharray="2,3" opacity="0.45"/>
+<text x="320" y="125" text-anchor="middle" fill="#A855F7" font-size="22" font-weight="700" letter-spacing="-0.02em">20%</text>
+<text x="320" y="240" text-anchor="middle" fill="#A855F7" font-size="9" font-weight="700" letter-spacing="0.10em">BUCKET 03</text>
+<text x="320" y="260" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700">Double Down</text>
+<text x="320" y="282" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="11">Iterate 1M winners.</text>
+<text x="320" y="298" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="11">60% hit 1M again.</text>
+
+<!-- Bucket 4 · 10% · Video Content (coral) -->
+<rect x="405" y="198" width="70" height="12" fill="rgba(255,107,53,0.30)" clip-path="url(#bk4)"/>
+<path d="M405 90 L475 90 L467 210 L413 210 Z" stroke="#FF6B35" stroke-width="2" fill="none"/>
+<line x1="408" y1="198" x2="472" y2="198" stroke="#FF6B35" stroke-width="0.8" stroke-dasharray="2,3" opacity="0.45"/>
+<text x="440" y="125" text-anchor="middle" fill="#FF6B35" font-size="22" font-weight="700" letter-spacing="-0.02em">10%</text>
+<text x="440" y="240" text-anchor="middle" fill="#FF6B35" font-size="9" font-weight="700" letter-spacing="0.10em">BUCKET 04</text>
+<text x="440" y="260" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700">Video Content</text>
+<text x="440" y="282" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="11">Clips, breakdowns.</text>
+<text x="440" y="298" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="11">Higher time on post.</text>
+
+<!-- Bucket 5 · 5% · Original Content (cyan) -->
+<rect x="525" y="204" width="70" height="6" fill="rgba(34,211,238,0.30)" clip-path="url(#bk5)"/>
+<path d="M525 90 L595 90 L587 210 L533 210 Z" stroke="#22D3EE" stroke-width="2" fill="none"/>
+<line x1="528" y1="204" x2="592" y2="204" stroke="#22D3EE" stroke-width="0.8" stroke-dasharray="2,3" opacity="0.45"/>
+<text x="560" y="125" text-anchor="middle" fill="#22D3EE" font-size="22" font-weight="700" letter-spacing="-0.02em">5%</text>
+<text x="560" y="240" text-anchor="middle" fill="#22D3EE" font-size="9" font-weight="700" letter-spacing="0.10em">BUCKET 05</text>
+<text x="560" y="260" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700">Original Content</text>
+<text x="560" y="282" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="11">Our takes, rare.</text>
+<text x="560" y="298" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="11">Signal not commentary.</text>
+
+<!-- FEEDS arrows with specific labels -->
+<text x="140" y="48" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9" font-weight="700" letter-spacing="0.10em">NEWS ANGLES</text>
+<path d="M118 70 Q 140 55 162 70" stroke="rgba(255,255,255,0.30)" stroke-width="1" fill="none" marker-end="url(#arr-feed)"/>
+
+<text x="260" y="48" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9" font-weight="700" letter-spacing="0.10em">TEMPLATES</text>
+<path d="M238 70 Q 260 55 282 70" stroke="rgba(255,255,255,0.30)" stroke-width="1" fill="none" marker-end="url(#arr-feed)"/>
+
+<text x="380" y="48" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9" font-weight="700" letter-spacing="0.10em">SCALED ANGLES</text>
+<path d="M358 70 Q 380 55 402 70" stroke="rgba(255,255,255,0.30)" stroke-width="1" fill="none" marker-end="url(#arr-feed)"/>
+
+<text x="500" y="48" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="9" font-weight="700" letter-spacing="0.10em">SIGNAL WEIGHT</text>
+<path d="M478 70 Q 500 55 522 70" stroke="rgba(255,255,255,0.30)" stroke-width="1" fill="none" marker-end="url(#arr-feed)"/>
+
+<!-- Closed loop · cyan dashed · Original → Breaking News -->
+<path d="M 560 320 C 560 380, 80 380, 80 320" stroke="#22D3EE" stroke-width="1.2" fill="none" stroke-dasharray="4,5" opacity="0.65" marker-end="url(#arr-loop)"/>
+<text x="320" y="408" text-anchor="middle" fill="#22D3EE" font-size="10" font-weight="700" letter-spacing="0.10em" opacity="0.85">ORIGINAL FEEDS BACK INTO BREAKING NEWS · ONE CLOSED LOOP</text>
+</svg>
+
+<div class="b5-stats">
+<div class="b5-stat" style="background: rgba(52, 211, 153, 0.07); border-color: rgba(52, 211, 153, 0.45);">
+<div class="b5-stat-lab" style="color: #34D399;">Signal mix</div>
+<div class="b5-stat-num" style="color: #34D399;">85%</div>
+<div class="b5-stat-cap">news-driven: buckets 01 + 02 + 03</div>
+</div>
+<div class="b5-stat" style="background: rgba(168, 85, 247, 0.07); border-color: rgba(168, 85, 247, 0.45);">
+<div class="b5-stat-lab" style="color: #A855F7;">Compound rate</div>
+<div class="b5-stat-num" style="color: #A855F7;">~60%</div>
+<div class="b5-stat-cap">doubled-down posts hit 1M again</div>
+</div>
+<div class="b5-stat" style="background: rgba(34, 211, 238, 0.07); border-color: rgba(34, 211, 238, 0.45);">
+<div class="b5-stat-lab" style="color: #22D3EE;">Never force</div>
+<div class="b5-stat-num" style="color: #22D3EE;">5% max</div>
+<div class="b5-stat-cap">original, we are signal not commentary</div>
+</div>
+</div>
+
+<p class="b5-foot">Fill level inside each bucket is proportional to its allocation. Bucket 01 at 40% looks 8x fuller than Bucket 05 at 5%, which is the same ratio the system runs. The cyan dashed loop closes the engine: Original Content's brand authority feeds back into Breaking News credibility.</p>
+</div>

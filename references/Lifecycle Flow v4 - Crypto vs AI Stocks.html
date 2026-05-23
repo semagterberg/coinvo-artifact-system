@@ -1,0 +1,97 @@
+<style>
+.lf-wrap { padding: 4px 0; }
+.lf-title { font-size: 28px; font-weight: 700; line-height: 1.1; letter-spacing: -0.015em; color: var(--color-text-primary); margin: 0; }
+.lf-sub { font-size: 15px; font-weight: 400; color: var(--color-text-secondary); margin: 8px 0 0; line-height: 1.45; }
+.lf-div { border: none; border-top: 1px solid var(--color-border-tertiary); margin: 18px 0 18px; }
+.lf-axis-svg { width: 100%; height: 20px; display: block; margin: 8px 0 12px; }
+.lf-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; align-items: start; }
+.lf-stage { text-align: center; padding: 0 4px; }
+.lf-cap { font-size: 9px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; margin-bottom: 4px; color: var(--color-text-tertiary); }
+.lf-trig { font-size: 13px; font-weight: 700; line-height: 1.15; min-height: 32px; margin-bottom: 10px; letter-spacing: -0.01em; color: var(--color-text-primary); }
+.lf-action { font-size: 12px; font-weight: 600; line-height: 1.4; color: var(--color-text-primary); margin-bottom: 6px; min-height: 50px; }
+.lf-output { font-size: 11px; color: var(--color-text-tertiary); line-height: 1.4; }
+.lf-cook { margin-top: 22px; padding: 14px 18px; border: 1px solid rgba(239, 68, 68, 0.5); background: rgba(239, 68, 68, 0.07); border-radius: 6px; }
+.lf-cook-lab { font-size: 11px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: #EF4444; margin-bottom: 5px; }
+.lf-cook-body { font-size: 14px; font-weight: 500; color: var(--color-text-primary); line-height: 1.55; }
+.lf-foot { margin-top: 14px; font-size: 12px; color: var(--color-text-tertiary); line-height: 1.55; }
+.lf-legend { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin: 0 0 14px; }
+.lf-leg { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--color-text-secondary); font-weight: 600; }
+.lf-leg-dot { width: 9px; height: 9px; border-radius: 50%; }
+</style>
+<div class="lf-wrap">
+<h2 class="sr-only">The lifecycle flow: 6 stages colored by action type. Neutral for observation, green for amplify, amber for boost, purple for log/threshold, coral for compound replay. Red cooking rule is the override.</h2>
+<h1 class="lf-title">The lifecycle flow</h1>
+<p class="lf-sub">6 stages, view count fires every trigger. Each color marks a distinct action type. Cooking rule overrides every stage.</p>
+<hr class="lf-div" />
+
+<div class="lf-legend">
+<div class="lf-leg"><span class="lf-leg-dot" style="background:rgba(255,255,255,0.5);"></span>Observe</div>
+<div class="lf-leg"><span class="lf-leg-dot" style="background:#34D399;"></span>Amplify</div>
+<div class="lf-leg"><span class="lf-leg-dot" style="background:#F5C518;"></span>Boost</div>
+<div class="lf-leg"><span class="lf-leg-dot" style="background:#A855F7;"></span>Log</div>
+<div class="lf-leg"><span class="lf-leg-dot" style="background:#FF6B35;"></span>Compound</div>
+</div>
+
+<svg class="lf-axis-svg" viewBox="0 0 680 20" preserveAspectRatio="none">
+<line x1="56" y1="10" x2="624" y2="10" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="4,5"/>
+<circle cx="56" cy="10" r="6" fill="rgba(255,255,255,0.55)"/>
+<circle cx="170" cy="10" r="7" fill="#34D399"/>
+<circle cx="283" cy="10" r="7" fill="#F5C518"/>
+<circle cx="397" cy="10" r="7" fill="#A855F7"/>
+<circle cx="511" cy="10" r="7" fill="#FF6B35"/>
+<circle cx="624" cy="10" r="7" fill="#FF6B35"/>
+</svg>
+
+<div class="lf-grid">
+
+<div class="lf-stage">
+<div class="lf-cap">Stage 1 · Observe</div>
+<div class="lf-trig">0–30 min</div>
+<div class="lf-action">Monitor replies for sentiment</div>
+<div class="lf-output">Real-time read on audience reaction</div>
+</div>
+
+<div class="lf-stage">
+<div class="lf-cap" style="color:#34D399;">Stage 2 · Amplify</div>
+<div class="lf-trig" style="color:#34D399;">50K views</div>
+<div class="lf-action">Drop source as reply if asked</div>
+<div class="lf-output">Self-confirms credibility, no distribution loss</div>
+</div>
+
+<div class="lf-stage">
+<div class="lf-cap" style="color:#F5C518;">Stage 3 · Boost</div>
+<div class="lf-trig" style="color:#F5C518;">100–150K views</div>
+<div class="lf-action">Retweet, drop link in promo reply</div>
+<div class="lf-output">Link suppression bypassed, reach extended</div>
+</div>
+
+<div class="lf-stage">
+<div class="lf-cap" style="color:#A855F7;">Stage 4 · Log</div>
+<div class="lf-trig" style="color:#A855F7;">1M views</div>
+<div class="lf-action">Log in Notion: screenshot, why, plan</div>
+<div class="lf-output">Winner enters the compounding loop</div>
+</div>
+
+<div class="lf-stage">
+<div class="lf-cap" style="color:#FF6B35;">Stage 5 · Compound</div>
+<div class="lf-trig" style="color:#FF6B35;">+2–3 days</div>
+<div class="lf-action">Double down with one iteration</div>
+<div class="lf-output">60% hit another 1M views</div>
+</div>
+
+<div class="lf-stage">
+<div class="lf-cap" style="color:#FF6B35;">Stage 6 · Replay</div>
+<div class="lf-trig" style="color:#FF6B35;">+2 weeks</div>
+<div class="lf-action">Identical repost permitted</div>
+<div class="lf-output">Audience reset, engineered second wave</div>
+</div>
+
+</div>
+
+<div class="lf-cook">
+<div class="lf-cook-lab">Cooking rule · override across all 6 stages</div>
+<div class="lf-cook-body">Never interfere with a post that's actively running, even to "improve" it. Edits, deletes, and mid-run replies redirect the algorithm and break the lifecycle at whatever stage they fire.</div>
+</div>
+
+<p class="lf-foot">Stages 1–4 fire on view-count thresholds (0, 50K, 150K, 1M). Stages 5–6 fire on time-based windows that only open once a 1M winner is logged. Crossing 1M is the only one-way gate.</p>
+</div>
