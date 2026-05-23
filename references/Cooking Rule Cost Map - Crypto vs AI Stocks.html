@@ -1,0 +1,121 @@
+<style>
+.cm-wrap { padding: 4px 0; }
+.cm-title { font-size: 28px; font-weight: 700; line-height: 1.1; letter-spacing: -0.015em; color: var(--color-text-primary); margin: 0; }
+.cm-sub { font-size: 15px; font-weight: 400; color: var(--color-text-secondary); margin: 8px 0 0; line-height: 1.45; }
+.cm-div { border: none; border-top: 1px solid var(--color-border-tertiary); margin: 18px 0 22px; }
+.cm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+.cm-panel { padding: 20px; border-radius: 6px; border: 1px solid; display: flex; flex-direction: column; }
+.cm-lab { font-size: 11px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; margin-bottom: 6px; }
+.cm-state { font-size: 20px; font-weight: 700; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 18px; }
+.cm-rows { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
+.cm-row { display: flex; align-items: center; gap: 10px; }
+.cm-num { font-size: 10px; font-weight: 700; letter-spacing: 0.10em; color: var(--color-text-tertiary); text-transform: uppercase; min-width: 48px; }
+.cm-bar-svg { flex: 1; height: 36px; }
+.cm-stat { font-size: 30px; font-weight: 700; line-height: 1; letter-spacing: -0.02em; margin-bottom: 4px; }
+.cm-stat-cap { font-size: 12px; color: var(--color-text-secondary); line-height: 1.4; }
+.cm-outcome { margin-top: 14px; padding-top: 12px; border-top: 1px dashed; font-size: 13px; line-height: 1.5; }
+.cm-cost { padding: 16px 20px; border: 1px solid var(--color-border-tertiary); border-radius: 6px; background: var(--color-background-secondary); display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.cm-cost-l { flex: 1; min-width: 240px; }
+.cm-cost-lab { font-size: 11px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--color-text-tertiary); margin-bottom: 5px; }
+.cm-cost-body { font-size: 13px; font-weight: 500; color: var(--color-text-primary); line-height: 1.5; }
+.cm-cost-r { text-align: right; }
+.cm-cost-val { font-size: 32px; font-weight: 700; color: #F04848; line-height: 1; letter-spacing: -0.02em; }
+.cm-cost-val-cap { font-size: 11px; color: var(--color-text-secondary); margin-top: 4px; letter-spacing: 0.04em; text-transform: uppercase; }
+.cm-foot { margin-top: 14px; font-size: 12px; color: var(--color-text-tertiary); line-height: 1.55; }
+</style>
+<div class="cm-wrap">
+<h2 class="sr-only">The cooking rule cost map: letting a post cook produces 3 compounding waves and ~2.8M views; interfering mid-cook produces ~200K views and no further waves.</h2>
+<h1 class="cm-title">The cooking rule cost map</h1>
+<p class="cm-sub">What survives, what dies. The override that runs across every stage of the lifecycle.</p>
+<hr class="cm-div" />
+
+<div class="cm-grid">
+
+<div class="cm-panel" style="background: rgba(52, 211, 153, 0.07); border-color: rgba(52, 211, 153, 0.45);">
+<div class="cm-lab" style="color: #34D399;">Let it cook</div>
+<div class="cm-state" style="color: #34D399;">3 waves compound</div>
+
+<div class="cm-rows">
+<div class="cm-row">
+<div class="cm-num">Wave 1</div>
+<svg class="cm-bar-svg" viewBox="0 0 220 36" preserveAspectRatio="none">
+<path d="M0 32 L20 32 Q45 32 70 18 T160 5 L220 5 L220 36 L0 36 Z" fill="rgba(34,211,238,0.20)"/>
+<path d="M0 32 L20 32 Q45 32 70 18 T160 5 L220 5" stroke="#22D3EE" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+<circle cx="220" cy="5" r="3" fill="#22D3EE"/>
+</svg>
+</div>
+<div class="cm-row">
+<div class="cm-num">Wave 2</div>
+<svg class="cm-bar-svg" viewBox="0 0 220 36" preserveAspectRatio="none">
+<path d="M0 32 L20 32 Q45 32 70 18 T160 5 L220 5 L220 36 L0 36 Z" fill="rgba(168,85,247,0.20)"/>
+<path d="M0 32 L20 32 Q45 32 70 18 T160 5 L220 5" stroke="#A855F7" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+<circle cx="220" cy="5" r="3" fill="#A855F7"/>
+</svg>
+</div>
+<div class="cm-row">
+<div class="cm-num">Wave 3</div>
+<svg class="cm-bar-svg" viewBox="0 0 220 36" preserveAspectRatio="none">
+<path d="M0 32 L20 32 Q45 32 70 18 T160 5 L220 5 L220 36 L0 36 Z" fill="rgba(52,211,153,0.20)"/>
+<path d="M0 32 L20 32 Q45 32 70 18 T160 5 L220 5" stroke="#34D399" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+<circle cx="220" cy="5" r="3" fill="#34D399"/>
+</svg>
+</div>
+</div>
+
+<div class="cm-stat" style="color: #34D399;">~2.8M</div>
+<div class="cm-stat-cap">Cumulative views across 3 engineered waves on 1 angle</div>
+<div class="cm-outcome" style="color: rgba(150,210,180,0.85); border-color: rgba(52, 211, 153, 0.3);">Winner enters the compounding loop. 60% odds the Double Down hits another 1M. The +2-week reset earns a third wave on the same angle.</div>
+</div>
+
+<div class="cm-panel" style="background: rgba(240, 72, 72, 0.07); border-color: rgba(240, 72, 72, 0.45);">
+<div class="cm-lab" style="color: #F04848;">Writer interferes</div>
+<div class="cm-state" style="color: #F04848;">Algorithm redirects</div>
+
+<div class="cm-rows">
+<div class="cm-row">
+<div class="cm-num">Wave 1</div>
+<svg class="cm-bar-svg" viewBox="0 0 220 36" preserveAspectRatio="none">
+<path d="M0 32 L20 32 Q35 32 50 26 L62 23 L62 36 L0 36 Z" fill="rgba(240,72,72,0.20)"/>
+<path d="M0 32 L20 32 Q35 32 50 26 L62 23" stroke="#F04848" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+<line x1="62" y1="0" x2="62" y2="36" stroke="#F04848" stroke-width="1" stroke-dasharray="2,2" opacity="0.65"/>
+<line x1="55" y1="16" x2="69" y2="30" stroke="#F04848" stroke-width="1.6" stroke-linecap="round"/>
+<line x1="69" y1="16" x2="55" y2="30" stroke="#F04848" stroke-width="1.6" stroke-linecap="round"/>
+<text x="142" y="22" font-size="10" font-weight="700" fill="#F04848" font-family="-apple-system,system-ui,sans-serif" text-anchor="middle">interrupted</text>
+</svg>
+</div>
+<div class="cm-row">
+<div class="cm-num">Wave 2</div>
+<svg class="cm-bar-svg" viewBox="0 0 220 36" preserveAspectRatio="none">
+<line x1="0" y1="18" x2="220" y2="18" stroke="rgba(240,72,72,0.3)" stroke-width="1" stroke-dasharray="3,4"/>
+<text x="110" y="22" font-size="10" font-weight="700" fill="rgba(240,72,72,0.75)" font-family="-apple-system,system-ui,sans-serif" text-anchor="middle">never launches</text>
+</svg>
+</div>
+<div class="cm-row">
+<div class="cm-num">Wave 3</div>
+<svg class="cm-bar-svg" viewBox="0 0 220 36" preserveAspectRatio="none">
+<line x1="0" y1="18" x2="220" y2="18" stroke="rgba(240,72,72,0.3)" stroke-width="1" stroke-dasharray="3,4"/>
+<text x="110" y="22" font-size="10" font-weight="700" fill="rgba(240,72,72,0.75)" font-family="-apple-system,system-ui,sans-serif" text-anchor="middle">never launches</text>
+</svg>
+</div>
+</div>
+
+<div class="cm-stat" style="color: #F04848;">~200K</div>
+<div class="cm-stat-cap">Original post flatlines on interference</div>
+<div class="cm-outcome" style="color: rgba(240,140,140,0.85); border-color: rgba(240, 72, 72, 0.3);">Algorithm redirects. Post never crosses 1M. Not logged. No Double Down at +2–3 days. No reset wave at +2 weeks.</div>
+</div>
+
+</div>
+
+<div class="cm-cost">
+<div class="cm-cost-l">
+<div class="cm-cost-lab">What counts as interference</div>
+<div class="cm-cost-body">Editing the post mid-run, deleting a flop while it's still being shown, replying from the main account to "improve" the framing, posting something new during the cook window. Any of these redirect the algorithm.</div>
+</div>
+<div class="cm-cost-r">
+<div class="cm-cost-val">14×</div>
+<div class="cm-cost-val-cap">fewer views per winner</div>
+</div>
+</div>
+
+<p class="cm-foot">View count fires every stage, not clock time. The cooking rule is the only override that runs across all 6 thresholds. Break it once on a 1M-eligible post, lose the entire engineered second and third wave.</p>
+</div>
