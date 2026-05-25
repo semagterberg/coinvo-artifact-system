@@ -37,7 +37,6 @@ Skipping the gallery view step is the most common cause of style drift. Every pr
 | 14-15px | 500-600 | Body text inside boxes |
 | 22-24px | 700 | Stat numbers in semantic color |
 | 11-12px | 600-700 | Caps labels with letter-spacing 0.10em |
-| 12px | 400 | Footer caption, color text-tertiary |
 
 Title gets `letter-spacing:-0.015em` and `line-height:1.1`. Hairline divider at `1px var(--color-border-tertiary)` with `margin:18px 0 22px` between title block and content.
 
@@ -55,9 +54,10 @@ Every chat-style artifact wraps in this exact frame:
 
   [main content]
 
-  <div style="font-size:12px;color:var(--color-text-tertiary);margin-top:18px;line-height:1.6;">[Footer caveat or explainer]</div>
 </div>
 ```
+
+Structure is title, subtitle, divider, design. Nothing trailing. Any caveat or source note that used to live in a footer now goes either inside the subtitle or inside the design itself as an inline annotation.
 
 Inside `[main content]`, the standard atoms:
 
@@ -71,7 +71,7 @@ Canvas is always **transparent** (no background on the root). Tokens for non-sem
 
 - `var(--color-text-primary)` for white-ish primary text
 - `var(--color-text-secondary)` for gray secondary
-- `var(--color-text-tertiary)` for faint captions
+- `var(--color-text-tertiary)` for faint inline detail
 - `var(--color-background-secondary)` for elevated card/track backgrounds
 - `var(--color-border-tertiary)` for hairline dividers
 
@@ -88,7 +88,7 @@ The patterns in `references/` are **prior art, not a closed catalog.** New topic
    - **Math** → what unit yields what return per unit of effort (EV, yield, rate)
    - **Hierarchy** → what is ranked, by what metric (ladder, tier, stack)
 3. **Pick the two most different.** Not the two best, the two most distinct. Sem always gets 2 options, and they should answer different questions about the topic.
-4. **Back each with measured data.** Look in the source doc first (numbers, dates, named forces). Web search if needed. Real beats invented every time. Cite where the number comes from in the footer caption.
+4. **Back each with measured data.** Look in the source doc first (numbers, dates, named forces). Web search if needed. Numbers must be sourced from the doc or a verifiable fact, never invented. If a number needs context, work it into the subtitle or into an inline annotation in the design itself.
 5. **State the angles in chat before building.** A short paragraph naming the two angles so Sem can redirect early if the framing is off.
 6. **Build both with the locked recipe.** Same title block, same type sizes, same palette, same atoms.
 7. **Recommend one with reasoning, leave the choice.** Say which fits the section's job better and why, then let Sem pick.
@@ -100,10 +100,10 @@ When triggered:
 1. **View 2-4 gallery PNGs** for vibe lock
 2. **Fetch the source doc** if Sem gave a URL or named a Notion page
 3. **Brainstorm angles** using the 6 frames above. State 3-5, narrow to 2 most different
-4. **Pull data** from the doc, prior chats (`conversation_search`), or web. Cite numbers
+4. **Pull data** from the doc, prior chats (`conversation_search`), or web. Cite numbers in chat prose if context requires it, never inside the artifact as a trailing footer
 5. **Build both** in chat using `visualize:show_widget`, static HTML, no script if avoidable
 6. **Recommend one** with the section's job in mind
-7. **Note the manual embed step** — Notion MCP cannot place embeds, Sem screenshots and pastes
+7. **Note the manual embed step** since Notion MCP cannot place embeds, Sem screenshots and pastes
 8. **If Sem approves a keeper (approval workflow)**:
    - **Approval triggers**: listen for "save this", "this is a keeper", "approved", "lock this one in", "10/10", "add to gallery", "save to repo"
    - **For the PNG**: Sem uses the chat widget's NATIVE export. Two paths depending on what "Download file" produces in his client:
@@ -117,6 +117,7 @@ When triggered:
 - **Do NOT use IBM Plex Mono terminal black canvas for chat-style artifacts.** That is the Surface A spec for standalone Notion embeds with full chrome. The default surface is chat (transparent, var tokens).
 - **Do NOT use the dim 2024-era palette** (`#2dd4bf` teal, `#1D9E75` muted green, `#7F77DD` dim purple, `#BA7517` dim amber). The locked palette is the **bright** one above. Sem rejected the dim version explicitly. See `principles.md` for why.
 - **Do NOT use a title at 40px+.** Title is 28px, subtitle is 15px. Anything bigger is out of proportion.
+- **Do NOT add a trailing footer caveat under the design.** Title, subtitle, divider, design. Nothing trailing. Caveats live in the subtitle or inside the design.
 - **Do NOT enumerate the pattern library as a closed list to Sem.** "Pick from these 10 patterns" caps creativity. Generate fresh angles from the 6 frames, then NAME the pattern if it matches existing prior art.
 - **Do NOT skip the gallery view step** because the spec is "in your context." Text rules are fragile, visual references are binding.
 - **Do NOT use em dashes or any dashes in sentences.** Use commas, periods, semicolons, or interpunct `·`. This is a hard rule from Sem's writing locks.
