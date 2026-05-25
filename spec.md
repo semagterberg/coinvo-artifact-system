@@ -106,11 +106,10 @@ When triggered:
 7. **Note the manual embed step** since Notion MCP cannot place embeds, Sem screenshots and pastes
 8. **If Sem approves a keeper (approval workflow)**:
    - **Approval triggers**: listen for "save this", "this is a keeper", "approved", "lock this one in", "10/10", "add to gallery", "save to repo"
-   - **For the PNG**: Sem uses the chat widget's NATIVE export. Two paths depending on what "Download file" produces in his client:
-     - If Download file = PNG → save it directly as `the-[topic].png`, drag into `/gallery/` on GitHub. One step.
-     - If Download file = HTML → use Copy to clipboard instead, paste into Preview (Cmd+N on Mac), save as `the-[topic].png`, drag into `/gallery/`.
-   - **For the HTML**: save the artifact's full HTML as a downloadable file from the sandbox using `create_file` at `/mnt/user-data/outputs/[topic].html` then `present_files`. Sem drags into `/references/`.
-   - **NEVER re-render the PNG in the sandbox.** The chat widget's native render IS the source of truth. Any sandbox-side render (playwright, chromium, puppeteer, etc.) is a worse approximation because the sandbox does not know Claude's actual CSS variable values, font stack, or proportions. This is a hard rule, see `principles.md`.
+   - **Claude does nothing.** The chat widget already has native download controls. Sem handles both files himself, do not re-export or create duplicate files in the sandbox.
+   - **HTML path (Sem's hands)**: Sem downloads the HTML directly from the chat widget, drags into `/references/` on GitHub.
+   - **PNG path (Sem's hands)**: Sem pastes the rendered artifact into Notion, exports the PNG from Notion, drags into `/gallery/` on GitHub.
+   - **NEVER re-render or re-export from the sandbox.** No `create_file` for the HTML, no `present_files`, no playwright, no chromium, no puppeteer. The chat widget's native render IS the source of truth. Any sandbox-side render or export is a worse approximation because the sandbox does not know Claude's actual CSS variable values, font stack, or proportions. This is a hard rule, see `principles.md`.
 
 ## 7. Anti-patterns (learned from broken chats)
 
@@ -118,6 +117,7 @@ When triggered:
 - **Do NOT use the dim 2024-era palette** (`#2dd4bf` teal, `#1D9E75` muted green, `#7F77DD` dim purple, `#BA7517` dim amber). The locked palette is the **bright** one above. Sem rejected the dim version explicitly. See `principles.md` for why.
 - **Do NOT use a title at 40px+.** Title is 28px, subtitle is 15px. Anything bigger is out of proportion.
 - **Do NOT add a trailing footer caveat under the design.** Title, subtitle, divider, design. Nothing trailing. Caveats live in the subtitle or inside the design.
+- **Do NOT re-export the artifact from the sandbox on keeper approval.** No `create_file` for the HTML, no `present_files`, no PNG re-render. The chat widget has native downloads, Sem uses those. Re-exporting is duplication, not service.
 - **Do NOT enumerate the pattern library as a closed list to Sem.** "Pick from these 10 patterns" caps creativity. Generate fresh angles from the 6 frames, then NAME the pattern if it matches existing prior art.
 - **Do NOT skip the gallery view step** because the spec is "in your context." Text rules are fragile, visual references are binding.
 - **Do NOT use em dashes or any dashes in sentences.** Use commas, periods, semicolons, or interpunct `·`. This is a hard rule from Sem's writing locks.
