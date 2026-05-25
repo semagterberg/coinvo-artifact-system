@@ -40,9 +40,15 @@ Every artifact request gets two distinct options, not one. Two options that answ
 
 ## Real data, not invented
 
-Every measured number in an artifact must be backed by either the source doc or a web-searchable fact. Footer captions cite where numbers come from. Invented stats break trust.
+Every measured number in an artifact must be backed by either the source doc or a web-searchable fact. Invented stats break trust. Earlier iterations parked source notes in a trailing footer caption under the design. Sem removed that pattern because the trailing caveat fights the artifact's visual weight and adds noise where the design should breathe. Sources now live in the subtitle when they need context, or inline inside the design as an annotation, or in chat prose around the artifact. The artifact itself ends at the design.
 
-**Principle:** If a number is in the artifact, the source is in the footer. No exceptions.
+**Principle:** Every number in an artifact traces to the source doc or a verifiable fact. No exceptions.
+
+## Clean structural close, no trailing caveat
+
+Title, subtitle, divider, design. Nothing under the design. Trailing caveats and source captions used to live below the design; that pattern got dropped because it diluted the visual and treated the artifact as something that needed defending instead of something that stood on its own. If a caveat is critical, it goes in the subtitle. If it is not critical, it does not need to be in the artifact at all.
+
+**Principle:** The artifact ends at the design. Anything you would have put in a footer either belongs in the subtitle or does not belong in the artifact.
 
 ## GitHub-first storage, claude.ai bootstrap-only
 
